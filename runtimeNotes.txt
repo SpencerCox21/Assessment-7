@@ -1,0 +1,31 @@
+
+
+Results for the tinyArray
+insert 17.9 μs
+append 56 μs
+
+Results for the smallArray
+insert 26.2 μs
+append 60.9 μs
+
+Results for the mediumArray
+insert 117.2 μs
+append 88.5 μs
+
+Results for the largeArray
+insert 4.8897 ms
+append 375.2 μs
+
+Results for the extraLargeArray
+insert 507.328 ms
+append 2.0958 ms
+
+
+
+
+Results Explanation:
+.unshift has a runtime complexity of O(n^2) while .push has a runtime complexity of O(n). The reason that the .unshift scales higher then the .push is because while .push is running it doesn't need to reuse and copy over memory because it simply just adds to the end of the list. The .unshift way will start out a little bit faster but it's scale is much higher because when .unshift is running it will put the item at the front of the list, which means that the program will then need to take every item that is currently in the list and move them all down by one. When running a small amount of code the differences are almost non-existant but the bigger the amount of data the more time .unshift will need because it has a runtime complexity of O(n^2).
+
+
+Extra Credit:
+I kind of already did this in the Results Explanation above but to summarize. .unshift is a function that will put items into a list but it put the current item at the front of the list, the program then needs to move all of the items that are already in the list down the list by 1. In shorter lists the time that this takes is pretty small but in very large lists the run time will increase dramatically due to the massive list that the program will need to adjust.
